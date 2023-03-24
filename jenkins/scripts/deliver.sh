@@ -19,7 +19,7 @@ echo 'of the previously run process (i.e. "npm start") and writes this value to'
 echo 'the file ".pidfile".'
 set -x
 # npm start &
-sudo cp -r ${WORKSPACE}/build/ /var/www/html/.
+cp -r ${WORKSPACE}/build/ /var/www/html/.
 sleep 1
 echo $! > .pidfile
 set +x
