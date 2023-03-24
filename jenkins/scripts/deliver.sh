@@ -19,6 +19,7 @@ echo 'of the previously run process (i.e. "npm start") and writes this value to'
 echo 'the file ".pidfile".'
 set -x
 # npm start &
+npm install -g serve
 serve build -s -p 5004
 sleep 1
 echo $! > .pidfile
