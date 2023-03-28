@@ -1,5 +1,15 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:6-alpine' 
+            args '-p 3000:3000' 
+            FROM amd64/node
+            RUN npm install -g serve --force
+            WORKDIR /app
+            COPY ./build]/ .
+            CMD ["serve", "-p", "9000", "-s", "."]
+        }
+    }
     environment {
         CI = 'true'
     }
